@@ -55,14 +55,32 @@
     // 4. How many years did all the inventors live all together?
     // get the age of just one inventor
 
-    // const totalAge = inventors.reduce();
-    let age = inventors[0].passed - inventors[0].year;
-    console.log(inventors[0]);
-    console.log(age);
-    
-// fix git email issue
+    const initialValue = 0;
+    const totalAge = inventors.reduce((accumulator, currentValue) => {
+
+      const ageOfInventor = currentValue.passed - currentValue.year;
+      const totalAge = accumulator + ageOfInventor;
+      return totalAge;
+
+    }, initialValue);
+    console.log(totalAge);
 
     // 5. Sort the inventors by years lived
+    const calcAge = inventors[0].passed - inventors[0].year;
+    console.log(calcAge);
+    // The problem is to sort based on their age
+    // I have to get their age
+    function getAge(a, b) {
+      console.log("This is a", a);
+      console.log("This is b", b);
+      const ageOfA = a.passed - a.year;
+      const ageOfB = b.passed - b.year;
+      console.log("This is age of A", ageOfA);
+      console.log("This is the age of B", ageOfB);
+      return ageOfA - ageOfB;
+    }
+    const sortByAge = inventors.sort(getAge);
+    console.table(sortByAge);
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
