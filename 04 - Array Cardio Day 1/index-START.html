@@ -71,12 +71,10 @@
     // The problem is to sort based on their age
     // I have to get their age
     function getAge(a, b) {
-      console.log("This is a", a);
-      console.log("This is b", b);
+      
       const ageOfA = a.passed - a.year;
       const ageOfB = b.passed - b.year;
-      console.log("This is age of A", ageOfA);
-      console.log("This is the age of B", ageOfB);
+
       return ageOfA - ageOfB;
     }
     const sortByAge = inventors.sort(getAge);
