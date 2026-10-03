@@ -88,10 +88,39 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-    const sortByName = inventors.sort((a, b) => {
-      return a.last.localeCompare(b.last);
-    });
-    console.table(sortByName);
+    
+    // Split the string items in an array into first and last name
+    // then sort with the last name via the sort method
+    function lastNameSort(a, b) {
+      // checking the values that are stored in the parameters
+      console.log("This is the firstValue", a);
+      console.log("This is the secondValue", b);
+
+      // creating the arrays from both params and storing them in variables
+      const aTextArray = a.split(", ");
+      const bTextArray = b.split(", ");
+
+      // check to see the resulting array
+      console.log("This is aArray", aTextArray);
+      console.log("This is bArray", bTextArray); 
+
+      const aFirstName = aTextArray[0]; // gets the first element in a's array and stores it as it;s firstName
+      const aLastName = aTextArray[1]; // gets the first element in a's array and stores it as it's lastName
+      const bFirstName = bTextArray[0]; // gets the first element in b's array and stores it as it's firstName
+      const bLastName = bTextArray[1]; // gets the second element in b's array and stores it as it's lastName
+
+      console.log("This is A's lastname", aLastName); // check to see a's last Name
+      console.log("This is B's lastname", bLastName); // check to see b's last Name  
+
+      const sortMechanism = aLastName.localeCompare(bLastName);
+      // return the sorted Values
+      return sortMechanism;
+    }
+    // stores the result of the sort in a variable
+    const sortByLastName = people.sort(lastNameSort);
+    // makes the result in a console table for easy tracking and makes it orderly
+    console.table(sortByLastName);
+    
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
