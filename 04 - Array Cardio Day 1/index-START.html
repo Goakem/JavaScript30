@@ -102,7 +102,7 @@
       const sortMechanism = aLastName.localeCompare(bLastName);
       return sortMechanism;
     }
-    
+
     const sortByLastName = people.sort(lastNameSort);
     console.table(sortByLastName);
     
@@ -110,7 +110,19 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-    
+    function multipleTimes(accumulator, currentValue) {
+      console.log("This is the accumulator", accumulator);
+      console.log("This is the currentValue", currentValue);
+    }
+    const numOfOccurence = data.reduce(multipleTimes);
+
+    // What am I trying to achieve?
+    // get the items   <- How do I store the items to increment them?
+    // check if it already exists 
+    // if it already exists increase its count by 1
+    // if it doesn't return the current Count
+
+
   </script>
 </body>
 </html>
