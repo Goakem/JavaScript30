@@ -110,24 +110,27 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-    // function multipleTimes(accumulator, currentValue) {
-    //   console.log("This is the accumulator", accumulator);
-    //   console.log("This is the currentValue", currentValue);
-    // }
-    // const numOfOccurence = data.reduce(multipleTimes);
+    function multipleTimes(accumulator, currentValue) {
+      console.log("This is the accumulator", accumulator);
+      console.log("This is the currentValue", currentValue);
 
-    // pick the first item
-    const [firstElement] = data;
-    console.log(firstElement);
-    // keep it then store it with the number of times it exists which on the first iteratioin is 1 time
-       // I have the item now as firstElement, i need to set the numbers of time it exist rn 
-       // then store the number of times it exist
-    // now go the next item
-    // check if the item is the same as the last stored item
-    // if it is increase the number of times it exists
-    // if it is not keep the item and increment the number of times it exists to 1
-    // do the same for the next one till the end
+      // get the items   <- How do I store the items to increment them?
+      let result = accumulator[currentValue] = 1;
+      console.log(result);
+      if() {
+        accumulator[currentValue]++;
+      }
+      // if it already exists increase its count by 1
+      return;
+    }
+    const numOfOccurence = data.reduce(multipleTimes, {});
+    console.log(numOfOccurence);
 
+    // What am I trying to achieve?
+    // get the items   <- How do I store the items to increment them?
+    // check if it already exists 
+    // if it already exists increase its count by 1
+    // if it doesn't return the current Count
 
   </script>
 </body>
