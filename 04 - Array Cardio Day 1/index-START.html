@@ -115,13 +115,13 @@
       console.log("This is the currentValue", currentValue);
 
       // get the items   <- How do I store the items to increment them?
-      let result = accumulator[currentValue] = 1;
-      console.log(result);
-      if() {
+      if(currentValue in accumulator) {
         accumulator[currentValue]++;
+      } else {
+        accumulator[currentValue] = 1;
       }
       // if it already exists increase its count by 1
-      return;
+      return accumulator;
     }
     const numOfOccurence = data.reduce(multipleTimes, {});
     console.log(numOfOccurence);
