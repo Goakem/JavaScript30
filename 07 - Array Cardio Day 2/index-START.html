@@ -28,14 +28,72 @@
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
     // Array.prototype.every() // is everyone 19 or older?
+    /* 
+        ** This is for the every method **
+        Take the first element
+        check if the age is 19 years or older
+        if the age is 19 or older move onto the next 
+        if it is not return false as the final result
+    */
+   function ageCheck19(element) {
+    const currentDate = new Date();
+    const newAge = currentDate.getFullYear() - element.year;
+    return newAge > 18;
+   }
+   const isEveryOne19 = people.every(ageCheck19);
+   console.log(isEveryOne19);
+   /* 
+        ** This is for the some method **
+        Take the first element
+        check if the age is 19 years or older
+        if the age is 19 or older
+        return true
+        else if it is not move unto the next till the last element
+        if the last element does not satisfy the required result return false
+        else if the last element meets the requirement return true
+    */
+
+    const isSomeone19 = people.some(ageCheck19);
+    console.log(isSomeone19);
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
+    /*
+      Take the first element
+      check its ID
+      if its ID meets the requiremt
+      return it
+      if it does not move unto the next until the last element
+      check if the last element meets the requirement
+      if it does return the element 
+      if it dose not return undefined
+    */
+
+    function findId(element) {
+      return element.id === 823423;
+    }
+    const idFound = comments.find(findId);
+    console.log(idFound);
 
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+
+    /*
+      since the id has been found above, I do not intend to find the id again
+      will just move unto the step of finding the index and deleting it
+    */
+
+    /*
+      Find the index of the comment with the id 823423
+      then delete it
+    */
+   const commentIndex = comments.findIndex(findId);
+   console.log(commentIndex);
+   const deletedComment = comments.splice(1, commentIndex);
+   console.log("This is the deleted comment", deletedComment);
+   console.log("This is the new comment", comments);
 
   </script>
 </body>
